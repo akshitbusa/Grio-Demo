@@ -1,0 +1,271 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--surface-color);
+  position: relative;
+}
+
+.activityHeader {
+  padding: 1rem 1.25rem;
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backButton {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.backButton:hover {
+  color: var(--text-primary);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.headerTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mainContent {
+  padding: 1.5rem;
+  padding-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.scenarioCard {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.scenarioTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scenarioText {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.instruction {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.optionCard {
+  text-align: left;
+  background: var(--surface-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.optionCard:not(:disabled):hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.optionCard.selected {
+  border-color: var(--primary-color);
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.03), rgba(236, 72, 153, 0.03));
+}
+
+.optionCard.correct {
+  border-color: var(--success-color);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.optionCard.incorrect {
+  border-color: #ef4444; /* red */
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.optionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.optionBadge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--bg-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.optionCard.selected .optionBadge {
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.correctIcon {
+  color: var(--success-color);
+}
+
+.incorrectIcon {
+  color: #ef4444;
+}
+
+.optionText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.feedbackCard {
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  margin-top: 0.5rem;
+}
+
+.feedbackSuccess {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+.feedbackError {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.trophyIcon {
+  color: #059669;
+}
+
+.bottomActions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.125rem;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.primaryButton:not(.disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.primaryButton.disabled {
+  background: #cbd5e1;
+  color: #f8fafc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.completeButton {
+  background: var(--success-color);
+}
+
+.completeButton:hover {
+  background: #059669;
+}
+
+@media (min-width: 768px) {
+  .optionsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .bottomActions {
+    position: static;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-shadow: none;
+    border-top: none;
+    background: transparent;
+    padding: 0;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .primaryButton {
+    width: auto;
+    padding: 1rem 3rem;
+  }
+  
+  .mainContent {
+    padding-bottom: 2rem;
+  }
+}

@@ -1,0 +1,254 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding-bottom: 2rem;
+}
+
+.mainContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Welcome Section */
+.welcomeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.greeting {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.courseTitle {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--primary-color);
+}
+
+.courseDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Progress */
+.progressCard {
+  background: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.progressText {
+  color: var(--text-primary);
+}
+
+.progressValue {
+  color: var(--primary-color);
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-full);
+  transition: width 1s ease-out;
+}
+
+/* Tip Section */
+.tipCard {
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+  border-left: 4px solid var(--primary-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.tipIcon {
+  margin-top: 0.25rem;
+}
+
+.tipTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tipText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Actions Section */
+.actionSection {
+  display: flex;
+  gap: 1rem;
+}
+
+.continueButton, .grioButton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.continueButton {
+  background: var(--text-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.continueButton:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+}
+
+.grioButton {
+  background: white;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.grioButton:hover {
+  border-color: var(--primary-color);
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Modules Section */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.modulesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.moduleCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.moduleCard:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.moduleCard.completed {
+  border-left: 4px solid var(--success-color);
+}
+
+.moduleCard.in-progress {
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.moduleCard.locked {
+  opacity: 0.7;
+  background: #f8fafc;
+}
+
+.completedIcon {
+  color: var(--success-color);
+}
+
+.inProgressIcon {
+  color: var(--primary-color);
+}
+
+.lockedIcon {
+  color: #cbd5e1;
+}
+
+.moduleTag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.moduleTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .welcomeSection {
+    grid-column: 1 / -1;
+  }
+  
+  .tipSection {
+    grid-column: 1 / 2;
+  }
+  
+  .actionSection {
+    grid-column: 1 / 2;
+    flex-direction: row;
+  }
+  
+  .modulesSection {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+  }
+}
