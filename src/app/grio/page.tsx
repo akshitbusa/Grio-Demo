@@ -49,7 +49,7 @@ export default function GriOScreen() {
       <div className={styles.botContent}>
         <p><strong>Sustainable tourism</strong> means visiting a place and trying to make a positive impact on the environment, society, and economy.</p>
         <p>This includes doing things like reducing water use, buying locally made souvenirs, and respecting the cultural heritage of the area.</p>
-        <p className={styles.subtext}>Think of it as "leaving a place better than how you found it".</p>
+        <p className={styles.subtext}>Think of it as {"leaving a place better than how you found it"}.</p>
       </div>
     )
   };

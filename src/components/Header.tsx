@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles, Menu, UserCircle } from "lucide-react";
+import { Sparkles, UserCircle } from "lucide-react";
 import styles from "./header.module.css";
 
 export default function Header() {
